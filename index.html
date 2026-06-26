@@ -1,148 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Earn a $300 Capital One Bonus | Checking Referral</title>
-
-<meta name="description" content="Open an eligible Capital One checking account through my referral link and qualify for up to a $300 bonus when you meet the promotional requirements.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Referral Wave</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f5f5;
-    color:#222;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
-.hero{
-    background:#004879;
-    color:white;
-    padding:70px 20px;
-    text-align:center;
+body {
+  background: #05060a;
+  color: white;
+  overflow-x: hidden;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+/* glowing wave background */
+.wave {
+  position: fixed;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5') center/cover no-repeat;
+  opacity: 0.08;
+  filter: blur(0px);
+  z-index: -2;
 }
 
-.card{
-    background:white;
-    border-radius:12px;
-    padding:30px;
-    margin:25px 0;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(120,90,255,0.25), transparent 50%),
+              radial-gradient(circle at bottom, rgba(0,200,255,0.15), transparent 60%);
+  z-index: -1;
 }
 
-.button{
-    display:inline-block;
-    margin-top:25px;
-    padding:18px 38px;
-    background:#0066ff;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    font-size:18px;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
 }
 
-.button:hover{
-    background:#004ec7;
+.logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #7c5cff;
 }
 
-ul{
-    line-height:2;
+nav a {
+  color: #aaa;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-footer{
-    font-size:13px;
-    color:#666;
-    margin-top:50px;
-    text-align:center;
+nav a:hover {
+  color: white;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #7c5cff;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg,#7c5cff,#00d4ff);
+  border: none;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  padding: 80px 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg,#7c5cff,#00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #aaa;
+  max-width: 500px;
+}
+
+.cta {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+/* PANEL */
+.panel {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.ref-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  padding: 40px 60px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
 }
 </style>
-
 </head>
 
 <body>
 
+<div class="wave"></div>
+<div class="overlay"></div>
+
+<nav>
+  <div class="logo">REFERWAVE</div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">How it works</a>
+    <a href="#">Rewards</a>
+    <a href="#">FAQ</a>
+  </div>
+  <div>
+    <button class="btn">Login</button>
+    <button class="btn primary">Sign Up</button>
+  </div>
+</nav>
+
 <section class="hero">
-<h1>Earn Up to a $300 Bonus</h1>
-<p>Open an eligible Capital One Checking Account and meet the promotional requirements.</p>
+  <div>
+    <h1>Share More. <br/>Earn <span>More.</span></h1>
+    <p>Invite friends using your unique referral link and earn rewards every time someone joins.</p>
 
-<a class="button"
-href="https://www.capitalone.com/bank/referrals/friend/?referralCode=9VJU6SKA9&programCode=RAFOFFER300"
-target="_blank">
-Claim Your Bonus
-</a>
+    <div class="cta">
+      <button class="btn primary">Get Your Link</button>
+      <button class="btn">How it works</button>
+    </div>
+  </div>
 
+  <div class="panel">
+    <h3>Your Referral Link</h3>
+
+    <div class="ref-box">
+      <input id="link" value="https://referwave.app/ref/dejones" />
+      <button class="btn primary" onclick="copy()">Copy</button>
+    </div>
+
+    <div class="stats">
+      <div>🔥 24 Referrals</div>
+      <div>💰 $120 Earned</div>
+    </div>
+  </div>
 </section>
 
-<div class="container">
-
-<div class="card">
-
-<h2>Why Choose Capital One?</h2>
-
-<ul>
-<li>✔ Potential bonus of up to $300 for eligible new customers.</li>
-<li>✔ Highly rated mobile banking app.</li>
-<li>✔ Large fee-free ATM network.</li>
-<li>✔ Online banking available 24/7.</li>
-<li>✔ Fast account opening process.</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>How It Works</h2>
-
-<ol>
-
-<li>Click the button above.</li>
-
-<li>Open an eligible Capital One checking account.</li>
-
-<li>Meet the promotional requirements.</li>
-
-<li>Receive your bonus if you qualify under the offer terms.</li>
-
-</ol>
-
-</div>
-
-<div class="card">
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>Does it cost anything?</h3>
-
-<p>Opening an account depends on the specific account you choose and its terms.</p>
-
-<h3>When do I receive the bonus?</h3>
-
-<p>Bonuses are typically paid after all promotional requirements have been satisfied.</p>
-
-<h3>Who can qualify?</h3>
-
-<p>Eligibility is determined by Capital One and the promotion's official terms.</p>
-
-</div>
+<section class="features">
+  <div class="card">⚡ Instant tracking for referrals</div>
+  <div class="card">🎁 Rewards for every signup</div>
+  <div class="card">🔒 Secure link system</div>
+</section>
 
 <footer>
-
-<p>
-Disclosure: This page contains a referral link. If you open an eligible account using my referral link and satisfy the promotional requirements, I may receive a referral reward. There is no additional cost to you. Please review Capital One's official terms before applying.
-</p>
-
+  © 2026 ReferWave. Built for referral growth.
 </footer>
 
-</div>
+<script>
+function copy() {
+  const link = document.getElementById("link");
+  link.select();
+  document.execCommand("copy");
+  alert("Referral link copied!");
+}
+</script>
 
 </body>
 </html>
